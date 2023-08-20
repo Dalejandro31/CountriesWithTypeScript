@@ -46,7 +46,7 @@ export default (sequelize: Sequelize) => {
     },
     {
         sequelize,
-        modelName: 'activity',
+        modelName: 'Activity',
         timestamps: false,
     }
     )

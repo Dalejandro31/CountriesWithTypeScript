@@ -1,8 +1,8 @@
-const server = require('./src/app.ts');
-const {conn} = require('./src/db.ts');
+import {sequelize} from './src/db'; // Cambio aquí
+const server = require('./src/app')
 
-conn.sync({force: true}).then(() => {
-    server.listen(3001, ()=> {
+sequelize.sync({ force: true }).then(() => {
+    server.listen(3001, () => {
         console.log('%s listening at 3001');
     });
 });

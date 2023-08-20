@@ -1,6 +1,5 @@
-import {Router, Request, Response, NextFunction} from 'express';
-import express from 'express';
+import express, {Router} from 'express';
 
-const router = express.Router();
+const router:Router = express.Router();
 
-module.exports = router; 
+export default router; 
