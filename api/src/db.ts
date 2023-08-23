@@ -15,13 +15,14 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 const basename= path.basename(__filename);
 const modelDefiners: any[] = [];
 
+modelDefiners.forEach(model =>model(sequelize));
+
 fs.readdirSync(path.join(__dirname, '/models'))
     .filter((file: string) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.ts'))
     .forEach((file: string) => {
         modelDefiners.push(require(path.join(__dirname, '/models', file)).default(sequelize));
     })
 
-modelDefiners.forEach(model =>model(sequelize));
 
 
 const{Country, Activity} = sequelize.models;
