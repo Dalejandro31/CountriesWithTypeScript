@@ -45,7 +45,7 @@ exports.default = (sequelize) => {
         },
     }, {
         sequelize,
-        modelName: 'activity',
+        modelName: 'Country',
         timestamps: false,
     });
     return Country;
